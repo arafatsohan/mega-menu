@@ -1,0 +1,454 @@
+
+*{
+  padding: 0;
+  margin: 0;
+ box-sizing: border-box;
+}
+
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+@import "../sass/bootstrap";
+
+
+
+
+@mixin square($size, $radius: 0) {
+  width: $size;
+  height: $size;
+
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
+} 
+
+$main-color:#e6e9ec;
+$secondary:#0062cc;
+$color-white:#fff;
+
+
+
+
+
+
+/*---------------------
+-----section titile--
+------------------------*/
+
+
+.section-title img {
+    width: 200px;
+    height: auto;
+    margin: 30px;
+}
+
+
+
+.drodown{
+  width: 100%;
+  background: $color-white;
+  position: relative;
+  border:1px solid #8080800f;
+
+
+
+  ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    li > {
+      display: inline-block;
+
+
+      a {
+        text-decoration: none;
+        padding: 20px;
+        display: block;
+        text-transform: uppercase;
+        color: #000;
+        font-weight: 700;
+        transition: 100ms ease-in-out;
+    -webkit-transition: 100ms ease-in-out;
+
+       > :hover {
+          color:#000;
+
+       
+        }
+      }
+    }
+  }
+
+  ul > {
+
+    li{
+
+        &:hover > a{
+         color:red;
+         
+        }
+
+    }
+  }
+
+    ul > {
+
+    li{
+    
+
+        &:hover > .dropdown__menu{
+         visibility: visible;
+         opacity: 1;
+         top: 62px;
+     
+        }
+
+    }
+  }
+
+
+  ul > {
+    li{
+         &:hover > .dropdown__multiple-menu {
+         visibility: visible;
+         opacity: 1;
+         top: 62px;
+     
+        }
+
+
+    }
+  }
+
+
+
+  .dropdown__menu{
+    visibility: hidden;
+    opacity: 0; 
+    position: absolute;
+    left: 50%;
+    top:60px;
+    background: $color-white ;
+    width: 1110px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transform: translateX(-50%);
+    transition: all 400ms ease-in-out;
+
+
+
+ 
+    z-index: 9999;
+
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+
+
+      .dropdown__header {
+        text-transform: uppercase;
+
+        h3{
+          font-size: 12px;
+          line-height: 2em;
+          font-weight: 700;
+        }
+
+        i{
+          font-size: 30px;
+          color: #000;
+          margin: 5px;
+        }
+    
+      }
+
+      .dropdown__product-img img{
+        width: 250px;
+        height: 200px;
+        }
+
+      .drodown__small-img img{
+       width: 100%;
+       margin-bottom: 10px;
+
+      }
+
+      .drodown__small-content{
+
+        h3{
+          font-size: 11px;
+          font-weight: 700px;
+          a{
+            text-decoration: none;
+            color: #000;
+
+            transition: 300ms ease-in-out;
+            -webkit-transition: 300ms ease-in-out;
+
+            &:hover{
+              color:blue;
+            }
+          }
+         
+        }
+
+       span::after{
+         position: absolute;
+         content: '';
+         width: 40px;
+         height: 1px;
+         left: 13px;
+         top: 35px;
+         bottom: 0;
+         right: 0;
+         background: #000;
+
+        }
+           span::before{
+            position: absolute;
+            content: '';
+            width: 27px;
+            height: 1px;
+            left: 63px;
+            top: 41px;
+            bottom: 0;
+            right: 0;
+            background: #000;
+        }
+      }
+
+
+
+      li{
+        border-bottom: 1px solid #80808029;
+        a{
+          display: block;
+          padding: 10px;
+          font-size: 12px;
+          font-weight: normal;
+
+
+          &:hover{
+           
+        
+          }
+
+        }
+      }
+    }
+
+
+    .drodown__mega-item{
+
+      ul{
+        padding: 0;
+
+        li{
+          border-bottom: none;
+          a{
+            font-size: 12px;
+            padding: 0;
+            line-height: 2em;
+           transition: opacity 1s  ease-in-out;
+            -webkit-transition: 300ms ease-in-out;
+            
+
+            &:hover{
+              background:none;
+              color: blue;
+           
+            }
+          }
+        }
+      }
+
+      .drodown__mega-item-grained-control{
+        width: 200px;
+        padding: 10px;
+        position: absolute;
+        left: 58%;
+        top: 38%;
+        background:#fff;
+        padding:20px;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+         transition: all 400ms ease-in-out;
+        ul{
+
+          li{
+            a{
+               transition: opacity 1s  ease-in-out;
+            -webkit-transition: 300ms ease-in-out;
+
+
+            }
+          }
+        }
+      }
+    }
+
+
+ ul{
+ 
+
+      li{
+          &:hover > .drodown__mega-item-grained-control{
+         visibility: visible;
+         opacity: 1;
+         
+     
+        }
+
+      }
+  
+    }
+
+
+
+    .margin-top-20{
+      margin-top: 20px;
+    }
+
+
+
+
+    .drodown__mega-item-img img{
+      width: 200px;
+      height: 180px;
+    }
+
+  }
+
+  .drodown__img img {
+    width: 100%;
+    height: auto;
+    margin: 10px;
+}
+
+
+.dropdown__background-img{
+   background-image: url("../img/panasonic-lumix-g100-vlogging-camera-with-lumix-g-vario-12-32mm-f35-56-and-shgr1-tripod-grip.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 320px;
+
+   ul{
+    li{
+      a{
+        font-size: 12px;
+        color: #000;
+        font-weight: normal;
+        text-decoration: none;
+        transition: 300ms ease-in-out;
+        -webkit-transition: 300ms ease-in-out;
+        &:hover{
+          background:none;
+          color: blue;
+          padding-left: 20px;
+
+        }
+      }
+    }
+   }
+
+
+}
+
+
+/*Multiple Dropdown menu style*/
+.dropdown__multiple-menu {
+    top: 60px;
+    width: 250px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+     transition: all 400ms ease-in-out;
+
+    
+
+    ul{
+      display: flex;
+      flex-direction: column;
+
+      li{
+
+        a{
+          font-size: 12px;
+        }
+
+
+
+          &:hover > .dropdown__sitemenuOne-step{
+           visibility: visible;
+           opacity: 1;
+           top: 62px;
+     
+        }
+
+      }
+  
+    }
+
+ ul{
+ 
+
+      li{
+          &:hover >  .dropdown__sitemenuSecond-step{
+         visibility: visible;
+         opacity: 1;
+         top: 62px;
+     
+        }
+
+      }
+  
+    }
+
+     ul{
+ 
+
+      li{
+          &:hover >  .dropdown__dropdown__multiple-menu-step{
+         visibility: visible;
+         opacity: 1;
+         top: 62px;
+     
+        }
+
+      }
+  
+    }
+    
+
+
+  .dropdown__sitemenuOne-step, .dropdown__sitemenuSecond-step,.dropdown__dropdown__multiple-menu-step{
+      position: absolute;
+      width: 250px;
+      left: 251px;
+      top:60px;
+      transform: translateY(-60px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+      visibility: hidden;
+      opacity: 0;
+       transition: all 400ms ease-in-out ;
+
+    
+    }
+
+
+
+
+
+    .dropdown__sitemenuSecond-step{
+ 
+      transform: translateY(5px);
+   
+    }
+}
+}
